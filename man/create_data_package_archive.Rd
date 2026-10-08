@@ -16,7 +16,8 @@ create_data_package_archive(packageId, env = "production")
 transaction (character) Transaction identifier.
 }
 \description{
-This function is DEPRECATED.
+This function is DEPRECATED. Please use 
+\code{download_data_package_archive()} instead.
 }
 \seealso{
 Other Miscellaneous:

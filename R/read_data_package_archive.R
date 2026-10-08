@@ -1,5 +1,8 @@
 #' Read data package archive
 #'
+#' @description This function is DEPRECATED. Please use 
+#' \code{download_data_package_archive()} instead.
+#'
 #' @param packageId (character) Data package identifier
 #' @param transaction (character) Transaction identifier. This parameter is 
 #' DEPRECATED.
@@ -28,21 +31,18 @@ read_data_package_archive <- function(packageId,
                                       transaction,
                                       path,
                                       env = "production") {
+  .Deprecated("download_data_package_archive")
   if (!missing(transaction)) {
     warning(
       "The 'transaction' parameter is deprecated and no longer required. ",
-      "Please use this function without it.", call. = FALSE
+      "Please use 'download_data_package_archive()' instead.", 
+      call. = FALSE
     )
   }
-  url <- paste0(
-    base_url(env), "/package/download/eml/",
-    paste(parse_packageId(packageId), collapse = "/")
-  )
-  resp <- api_get(
-    url,
-    set_user_agent(),
-    handle = httr::handle(""),
-    httr::write_disk(paste0(path, "/", packageId, ".zip")),
-    httr::progress()
+  download_data_package_archive(
+    packageId = packageId,
+    path = path,
+    overwrite = TRUE,
+    env = env
   )
 }

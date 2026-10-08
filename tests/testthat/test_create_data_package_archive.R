@@ -20,6 +20,6 @@ testthat::test_that("create_data_package_archive() issues warning", {
   packageId <- paste("edi", packageId, rev, sep = ".")
   testthat::expect_warning(
     object = create_data_package_archive(packageId, env = "staging"),
-    regexp = "The 'create_data_package_archive' function is deprecated."
+    regexp = "download_data_package_archive"
   )
 })

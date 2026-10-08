@@ -2,7 +2,7 @@ context("Read data package archive")
 
 testthat::test_that("read_data_package_archive() issues deprecation warning", {
   # Test that the read_data_package_archive() function issues a deprecation 
-  # warning when the transaction parameter is used.
+  # warning when called.
   testthat::skip_on_cran()
   pkg <- get_test_package()
   vcr::use_cassette("read_data_package_archive_warn", {
@@ -15,7 +15,7 @@ testthat::test_that("read_data_package_archive() issues deprecation warning", {
           env = "staging"
         )
       },
-      regexp = "The 'transaction' parameter is deprecated"
+      regexp = "download_data_package_archive"
     )
   })
   archive <- paste0(pkg, ".zip")
@@ -74,4 +74,3 @@ testthat::test_that("read_data_package_archive() works without transaction", {
     file.remove(paste0(tempdir(), "/", archive))
   }
 })
-
