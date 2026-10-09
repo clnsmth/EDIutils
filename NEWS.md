@@ -7,8 +7,7 @@ EDIutils (development version)
 
 ### DEPRECATED AND DEFUNCT
 
-  * Deprecated `read_data_package_archive()` in favor of `download_data_package_archive()`.
-  * Updated `create_data_package_archive()` deprecation notice to point to `download_data_package_archive()`.
+  * `read_data_package_archive()` and `create_data_package_archive()` are defunct in favor of `download_data_package_archive()` because the PASTA API methods they call no longer exist.
 
 
 EDIutils 3.0.2 (2026-09-23)

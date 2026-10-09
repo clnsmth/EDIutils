@@ -1,6 +1,6 @@
-#' Read data package archive
+#' Read data package archive (defunct)
 #'
-#' @description This function is DEPRECATED. Please use 
+#' @description This function is defunct. Please use 
 #' \code{download_data_package_archive()} instead.
 #'
 #' @param packageId (character) Data package identifier
@@ -31,18 +31,9 @@ read_data_package_archive <- function(packageId,
                                       transaction,
                                       path,
                                       env = "production") {
-  .Deprecated("download_data_package_archive")
-  if (!missing(transaction)) {
-    warning(
-      "The 'transaction' parameter is deprecated and no longer required. ",
-      "Please use 'download_data_package_archive()' instead.", 
-      call. = FALSE
-    )
-  }
-  download_data_package_archive(
-    packageId = packageId,
-    path = path,
-    overwrite = TRUE,
-    env = env
+  .Defunct(
+    new = "download_data_package_archive",
+    package = "EDIutils",
+    msg = "'read_data_package_archive()' is defunct. Use 'download_data_package_archive()' instead."
   )
 }

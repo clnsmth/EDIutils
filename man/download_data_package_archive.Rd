@@ -46,7 +46,7 @@ utils::unzip(archive_path, list = TRUE)
 }
 }
 \seealso{
-Other Accessing: 
+Other Accessing:
 \code{\link[=read_data_entity]{read_data_entity()}},
 \code{\link[=read_data_entity_checksum]{read_data_entity_checksum()}},
 \code{\link[=read_data_entity_name]{read_data_entity_name()}},

@@ -10,12 +10,14 @@ testthat::test_that("download_data_package_archive() downloads and returns valid
     }
   }, add = TRUE)
 
-  vcr::use_cassette("download_data_package_archive", {
-    res <- download_data_package_archive(
-      packageId = pkg,
-      path = tempdir(),
-      env = "staging"
-    )
+  with_mock_write_disk({
+    vcr::use_cassette("download_data_package_archive", {
+      res <- download_data_package_archive(
+        packageId = pkg,
+        path = tempdir(),
+        env = "staging"
+      )
+    })
   })
 
   expect_equal(res, dest)
@@ -67,13 +69,15 @@ testthat::test_that("download_data_package_archive() overwrites existing file wh
   writeLines("dummy content", dest)
   dummy_size <- file.info(dest)$size
 
-  vcr::use_cassette("download_data_package_archive", {
-    res <- download_data_package_archive(
-      packageId = pkg,
-      path = tempdir(),
-      overwrite = TRUE,
-      env = "staging"
-    )
+  with_mock_write_disk({
+    vcr::use_cassette("download_data_package_archive", {
+      res <- download_data_package_archive(
+        packageId = pkg,
+        path = tempdir(),
+        overwrite = TRUE,
+        env = "staging"
+      )
+    })
   })
 
   expect_equal(res, dest)

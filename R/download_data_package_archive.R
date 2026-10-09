@@ -69,10 +69,5 @@ download_data_package_archive <- function(packageId,
     httr::stop_for_status(resp, msg)
   }
 
-  # 5. Handle mock playback in test mode (vcr does not invoke write_disk)
-  if (is_vcr_replaying() && is.raw(resp$content)) {
-    writeBin(resp$content, dest)
-  }
-
   return(dest)
 }

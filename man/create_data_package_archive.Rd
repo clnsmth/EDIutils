@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_data_package_archive.R
 \name{create_data_package_archive}
 \alias{create_data_package_archive}
-\title{Create data package archive (zip)}
+\title{Create data package archive (zip) (defunct)}
 \usage{
 create_data_package_archive(packageId, env = "production")
 }
@@ -16,7 +16,7 @@ create_data_package_archive(packageId, env = "production")
 transaction (character) Transaction identifier.
 }
 \description{
-This function is DEPRECATED. Please use 
+This function is defunct. Please use 
 \code{download_data_package_archive()} instead.
 }
 \seealso{

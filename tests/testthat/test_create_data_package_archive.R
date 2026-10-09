@@ -1,25 +1,13 @@
 context("Create data package archive")
 
-testthat::test_that("create_data_package_archive() works (mock test)", {
-  vcr::skip_if_vcr_off()
-  vcr::use_cassette("create_data_package_archive", {
-    packageId <- get_test_package()
-    transaction <- suppressWarnings(
-      create_data_package_archive(packageId, env = "staging")
-    )
-  })
-  expect_true(class(transaction) == "character")
-})
-
-testthat::test_that("create_data_package_archive() issues warning", {
-  # Test that the create_data_package_archive() function issues a deprecation 
-  # warning when called.
-  skip_if_logged_out()
-  packageId <- list_data_package_identifiers(scope = "edi", env = "staging")[1]
-  rev <- list_data_package_revisions("edi", packageId, env = "staging")[1]
-  packageId <- paste("edi", packageId, rev, sep = ".")
-  testthat::expect_warning(
-    object = create_data_package_archive(packageId, env = "staging"),
-    regexp = "download_data_package_archive"
+testthat::test_that("create_data_package_archive() is defunct", {
+  testthat::expect_error(
+    create_data_package_archive("edi.1923.1"),
+    class = "defunctError"
+  )
+  testthat::expect_error(
+    create_data_package_archive("edi.1923.1"),
+    regexp = "'create_data_package_archive()' is defunct. Use 'download_data_package_archive()' instead.",
+    fixed = TRUE
   )
 })
