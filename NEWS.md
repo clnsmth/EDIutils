@@ -1,3 +1,15 @@
+EDIutils (development version)
+==============================
+
+### NEW FEATURES
+
+  * Added `download_data_package_archive()` to download a data package archive (.zip) containing all data entities, metadata, and quality reports via the synchronous PASTA download endpoint.
+
+### DEPRECATED AND DEFUNCT
+
+  * `read_data_package_archive()` and `create_data_package_archive()` are defunct in favor of `download_data_package_archive()` because the PASTA API methods they call no longer exist.
+
+
 EDIutils 3.0.2 (2026-09-23)
 ===========================
 

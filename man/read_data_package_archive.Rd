@@ -2,7 +2,7 @@
 % Please edit documentation in R/read_data_package_archive.R
 \name{read_data_package_archive}
 \alias{read_data_package_archive}
-\title{Read data package archive}
+\title{Read data package archive (defunct)}
 \usage{
 read_data_package_archive(packageId, transaction, path, env = "production")
 }
@@ -22,7 +22,8 @@ DEPRECATED.}
 by \code{transaction}
 }
 \description{
-Read data package archive
+This function is defunct. Please use 
+\code{download_data_package_archive()} instead.
 }
 \examples{
 \dontrun{
@@ -37,6 +38,7 @@ dir(tempdir())
 }
 \seealso{
 Other Accessing:
+\code{\link[=download_data_package_archive]{download_data_package_archive()}},
 \code{\link[=read_data_entity]{read_data_entity()}},
 \code{\link[=read_data_entity_checksum]{read_data_entity_checksum()}},
 \code{\link[=read_data_entity_name]{read_data_entity_name()}},

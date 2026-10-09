@@ -12,6 +12,7 @@ export(create_reservation)
 export(delete_event_subscription)
 export(delete_journal_citation)
 export(delete_reservation)
+export(download_data_package_archive)
 export(evaluate_data_package)
 export(execute_event_subscription)
 export(get_audit_count)
@@ -73,9 +74,11 @@ export(read_metadata_format)
 export(read_metadata_resource_metadata)
 export(search_data_packages)
 export(update_data_package)
-importFrom(httr,GET)
-importFrom(httr,authenticate)
-importFrom(httr,cookies)
-importFrom(httr,handle)
-importFrom(httr,stop_for_status)
+importFrom(httr,
+  GET,
+  authenticate,
+  cookies,
+  handle,
+  stop_for_status
+)
 importFrom(utils,read.csv)

@@ -35,6 +35,7 @@ read_data_entity_names("knb-lter-cap.691.2")
 }
 \seealso{
 Other Accessing:
+\code{\link[=download_data_package_archive]{download_data_package_archive()}},
 \code{\link[=read_data_entity]{read_data_entity()}},
 \code{\link[=read_data_entity_checksum]{read_data_entity_checksum()}},
 \code{\link[=read_data_entity_name]{read_data_entity_name()}},

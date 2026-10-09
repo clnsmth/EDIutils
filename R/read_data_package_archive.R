@@ -1,4 +1,7 @@
-#' Read data package archive
+#' Read data package archive (defunct)
+#'
+#' @description This function is defunct. Please use 
+#' \code{download_data_package_archive()} instead.
 #'
 #' @param packageId (character) Data package identifier
 #' @param transaction (character) Transaction identifier. This parameter is 
@@ -28,21 +31,9 @@ read_data_package_archive <- function(packageId,
                                       transaction,
                                       path,
                                       env = "production") {
-  if (!missing(transaction)) {
-    warning(
-      "The 'transaction' parameter is deprecated and no longer required. ",
-      "Please use this function without it.", call. = FALSE
-    )
-  }
-  url <- paste0(
-    base_url(env), "/package/download/eml/",
-    paste(parse_packageId(packageId), collapse = "/")
-  )
-  resp <- api_get(
-    url,
-    set_user_agent(),
-    handle = httr::handle(""),
-    httr::write_disk(paste0(path, "/", packageId, ".zip")),
-    httr::progress()
+  .Defunct(
+    new = "download_data_package_archive",
+    package = "EDIutils",
+    msg = "'read_data_package_archive()' is defunct. Use 'download_data_package_archive()' instead."
   )
 }

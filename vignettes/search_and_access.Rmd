@@ -109,7 +109,7 @@ Downloading a data package archive (.zip) requires a data package ID.
 
 ```{r eval=FALSE}
 # Download data package to path
-read_data_package_archive(packageId, path = tempdir())
+download_data_package_archive(packageId, path = tempdir())
 #> |=============================================================| 100%
 dir(tempdir())
 #> [1] ""edi.1047.1.zip"

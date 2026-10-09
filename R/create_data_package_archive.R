@@ -1,6 +1,7 @@
-#' Create data package archive (zip)
+#' Create data package archive (zip) (defunct)
 #' 
-#' This function is DEPRECATED.
+#' This function is defunct. Please use 
+#' \code{download_data_package_archive()} instead.
 #'
 #' @param packageId (character) Data package identifier
 #' @param env (character) Repository environment. Can be: "production",
@@ -13,13 +14,9 @@
 #' @export
 #'
 create_data_package_archive <- function(packageId, env = "production") {
-  .Deprecated(msg = "The 'create_data_package_archive' function is deprecated.")
-  url <- paste0(
-    base_url(env), "/package/archive/eml/",
-    paste(parse_packageId(packageId), collapse = "/")
+  .Defunct(
+    new = "download_data_package_archive",
+    package = "EDIutils",
+    msg = "'create_data_package_archive()' is defunct. Use 'download_data_package_archive()' instead."
   )
-  resp <- api_post(url, set_user_agent(), handle = httr::handle(""))
-  res <- httr::content(resp, as = "text", encoding = "UTF-8")
-  httr::stop_for_status(resp, res)
-  return(res)
 }
